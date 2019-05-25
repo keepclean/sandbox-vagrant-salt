@@ -1,0 +1,1 @@
+# sandbox-vagrant-salt
