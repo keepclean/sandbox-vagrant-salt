@@ -16,10 +16,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :salt do |salt|
     salt.masterless = true
+    salt.install_master = false
+    salt.run_highstate = true
+    salt.run_overstate = false
+    salt.orchestrations = false
     salt.minion_config = "configs/minion"
     salt.minion_id = "deb01"
-    salt.run_highstate = true
-
+    salt.bootstrap_options = "-d -X -x python3"
     salt.python_version = "3"
   end
 
