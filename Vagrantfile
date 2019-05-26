@@ -12,11 +12,11 @@ Vagrant.configure("2") do |config|
     vb.default_nic_type = "virtio"
   end
 
-  config.vm.synced_folder "~/Code/infra/salt", "/srv/salt/", type: "nfs"
+  config.vm.synced_folder "salt/", "/srv/salt/", type: "nfs"
 
   config.vm.provision :salt do |salt|
     salt.masterless = true
-    salt.minion_config = "~/Code/infra/salt/configs/minion"
+    salt.minion_config = "salt/configs/minion"
     salt.minion_id = "deb01"
     salt.run_highstate = true
 
