@@ -1,4 +1,3 @@
-output: nested
 file_client: local
 state_verbose: False
 state_output: changes
