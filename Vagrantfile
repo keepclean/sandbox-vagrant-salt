@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/stretch64"
   config.vm.hostname = "deb01"
-  config.vm.network "private_network", ip: "192.168.56.4", :name => 'vboxnet0', :adapter => 2
+  config.vm.network "private_network", ip: "10.0.0.44", :adapter => 2
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "deb01"
